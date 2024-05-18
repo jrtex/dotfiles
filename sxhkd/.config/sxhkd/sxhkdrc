@@ -1,0 +1,27 @@
+
+
+# Terminal
+super + @space
+  kitty
+
+super + Return
+  dmenu_run
+
+super + Escape
+  pkill -USR1 -x sxhkd
+
+# quit
+super + alt + {q, w}
+  bspc {quit,wm -r}
+
+
+# Move Focus
+super + {a,r,s,t}
+  bspc node --focus {west,south,north,east}
+
+# Swap Windows
+super + {n,e,i,o}
+  bspc node --swap {west,south,north,east}
+
+super + {_,shift + }{l,u,y,semicolon}
+  bspc {desktop -f, node -d} {1,2,3,4}
