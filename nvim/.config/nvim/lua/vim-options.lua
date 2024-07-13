@@ -9,6 +9,9 @@ vim.cmd("set rnu")
 vim.cmd("set ruler")
 vim.cmd("set autoindent")
 
+vim.cmd("set ignorecase")
+vim.cmd("set smartcase")
+
 vim.g.mapleader = " "
 
 vim.wo.number = true
