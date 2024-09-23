@@ -82,11 +82,11 @@ output "DP-1" {
   mode "1920x1080@60"
   position x=0 y=0
 }
-output "HDMI-A-1" {
+output "HDMI-A-3" {
   mode "1920x1080@60"
   position x=1920 y=0
 }
-output "HDMI-A-2" {
+output "HDMI-A-1" {
   mode "2560x1080@60"
   position x=0 y=-1080
 }
@@ -292,8 +292,8 @@ binds {
     Mod+Q { close-window; }
 
     Mod+A     { focus-column-or-monitor-left; }
-    Mod+R     { focus-window-or-workspace-down; }
-    Mod+S     { focus-window-or-workspace-up; }
+    Mod+R     { focus-window-or-monitor-down; }
+    Mod+S     { focus-window-or-monitor-up; }
     Mod+T     { focus-column-or-monitor-right; }
 //    Mod+H     { focus-column-left; }
 //    Mod+J     { focus-window-down; }
@@ -304,10 +304,10 @@ binds {
 //    Mod+Ctrl+Down  { move-window-down; }
 //    Mod+Ctrl+Up    { move-window-up; }
 //    Mod+Ctrl+Right { move-column-right; }
-    Mod+N     { move-column-left; }
-    Mod+E     { move-window-down; }
-    Mod+I     { move-window-up; }
-    Mod+O     { move-column-right; }
+    Mod+N     { move-column-left-or-to-monitor-left; }
+    Mod+E     { move-window-to-monitor-down; }
+    Mod+I     { move-window-to-monitor-up; }
+    Mod+O     { move-column-right-or-to-monitor-right; }
 
     // Alternative commands that move across workspaces when reaching
     // the first or last window in a column.
