@@ -291,49 +291,39 @@ binds {
 
     Mod+Q { close-window; }
 
+    // Window Focus Movement: Left homerows
     Mod+A     { focus-column-or-monitor-left; }
     Mod+R     { focus-window-or-monitor-down; }
     Mod+S     { focus-window-or-monitor-up; }
     Mod+T     { focus-column-or-monitor-right; }
-//    Mod+H     { focus-column-left; }
-//    Mod+J     { focus-window-down; }
-//    Mod+K     { focus-window-up; }
-//    Mod+L     { focus-column-right; }
-
-//    Mod+Ctrl+Left  { move-column-left; }
-//    Mod+Ctrl+Down  { move-window-down; }
-//    Mod+Ctrl+Up    { move-window-up; }
-//    Mod+Ctrl+Right { move-column-right; }
+ 
+    // Column Movement: Right homerow
+    // Moves columns across each other and monitors
     Mod+N     { move-column-left-or-to-monitor-left; }
     Mod+E     { move-window-to-monitor-down; }
     Mod+I     { move-window-to-monitor-up; }
     Mod+O     { move-column-right-or-to-monitor-right; }
 
-    // Alternative commands that move across workspaces when reaching
-    // the first or last window in a column.
-    // Mod+J     { focus-window-or-workspace-down; }
-    // Mod+K     { focus-window-or-workspace-up; }
-    // Mod+Ctrl+J     { move-window-down-or-to-workspace-down; }
-    // Mod+Ctrl+K     { move-window-up-or-to-workspace-up; }
+    // Windows Movement: Right bottom row
+    // Moves windows into, inside and out-of columns
+    Mod+H      { consume-or-expel-window-left; }
+    Mod+Comma  { move-window-down; }
+    Mod+Period { move-window-up; }
+    Mod+Slash  { consume-or-expel-window-right; }
 
+    
     Mod+Home { focus-column-first; }
     Mod+End  { focus-column-last; }
     Mod+Ctrl+Home { move-column-to-first; }
     Mod+Ctrl+End  { move-column-to-last; }
 
-//    Mod+Shift+Left  { focus-monitor-left; }
-//    Mod+Shift+Down  { focus-monitor-down; }
-//    Mod+Shift+Up    { focus-monitor-up; }
-//    Mod+Shift+Right { focus-monitor-right; }
+    // Monitor Focus
     Mod+Shift+A     { focus-monitor-left; }
     Mod+Shift+R     { focus-monitor-down; }
     Mod+Shift+S     { focus-monitor-up; }
     Mod+Shift+T     { focus-monitor-right; }
 
-//    Mod+Shift+Ctrl+Left  { move-column-to-monitor-left; }
-//    Mod+Shift+Ctrl+Down  { move-column-to-monitor-down; }
-//    Mod+Shift+Ctrl+Up    { move-column-to-monitor-up; }
-//    Mod+Shift+Ctrl+Right { move-column-to-monitor-right; }
+    // Monitor column-movements
     Mod+Shift+N     { move-column-to-monitor-left; }
     Mod+Shift+E     { move-column-to-monitor-down; }
     Mod+Shift+I     { move-column-to-monitor-up; }
@@ -346,19 +336,16 @@ binds {
     // Mod+Shift+Ctrl+Left  { move-workspace-to-monitor-left; }
     // ...
 
-//    Mod+Page_Down      { focus-workspace-down; }
-//    Mod+Page_Up        { focus-workspace-up; }
+    // Workspace Focus (relational):
     Mod+X              { focus-workspace-down; }
     Mod+C              { focus-workspace-up; }
-//    Mod+Ctrl+Page_Down { move-column-to-workspace-down; }
-//    Mod+Ctrl+Page_Up   { move-column-to-workspace-up; }
+    // Workspace Column Movement (relational):
     Mod+Shift+X         { move-column-to-workspace-down; }
     Mod+Shift+C         { move-column-to-workspace-up; }
 
     // Alternatively, there are commands to move just a single window:
     // Mod+Ctrl+Page_Down { move-window-to-workspace-down; }
     // ...
-
     Mod+Shift+Page_Down { move-workspace-down; }
     Mod+Shift+Page_Up   { move-workspace-up; }
     Mod+Ctrl+U         { move-workspace-down; }
@@ -404,38 +391,25 @@ binds {
     //
     // For example, with 2 workspaces + 1 empty, indices 3, 4, 5 and so on
     // will all refer to the 3rd workspace.
+
+    // Worspace focus (indexed):
     Mod+L { focus-workspace 1; }
     Mod+U { focus-workspace 2; }
     Mod+Y { focus-workspace 3; }
     Mod+Semicolon { focus-workspace 4; }
     Mod+J { focus-workspace 5; }
-//    Mod+6 { focus-workspace 6; }
-//    Mod+7 { focus-workspace 7; }
-//    Mod+8 { focus-workspace 8; }
-//    Mod+9 { focus-workspace 9; }
+
+    // Workspace Column movement (indexed):
     Mod+Shift+L { move-column-to-workspace 1; }
     Mod+Shift+U { move-column-to-workspace 2; }
     Mod+Shift+Y { move-column-to-workspace 3; }
     Mod+Shift+Semicolon { move-column-to-workspace 4; }
     Mod+Shift+J { move-column-to-workspace 5; }
-//    Mod+Ctrl+6 { move-column-to-workspace 6; }
-//    Mod+Ctrl+7 { move-column-to-workspace 7; }
-//    Mod+Ctrl+8 { move-column-to-workspace 8; }
-//    Mod+Ctrl+9 { move-column-to-workspace 9; }
-
-    // Alternatively, there are commands to move just a single window:
-    // Mod+Ctrl+1 { move-window-to-workspace 1; }
 
     // Switches focus between the current and the previous workspace.
     // Mod+Tab { focus-workspace-previous; }
 
-    Mod+Comma  { consume-window-into-column; }
-    Mod+Period { expel-window-from-column; }
-
-    // There are also commands that consume or expel a single window to the side.
-    // Mod+BracketLeft  { consume-or-expel-window-left; }
-    // Mod+BracketRight { consume-or-expel-window-right; }
-
+    // Window Size commands:
     Mod+W { switch-preset-column-width; }
     Mod+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
